@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/index',[PageController::class, 'getIndex'])->name('index');
+Route::get('/detail/{id}',[pageController::class,'getDetail']);
+Route::get('/search',[pageController::class,'search'])->name('search_sanpham');
